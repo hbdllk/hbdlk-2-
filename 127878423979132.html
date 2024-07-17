@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Личная страница">
+    <meta name="keywords" content="л">
+    <meta name="author" content="">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="https://">
+    <meta property="og:description" content="Личная страница">
+    <meta property="og:image" content="">
+    <title></title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -ms-user-select: none; 
+            -moz-user-select: none; 
+            -webkit-user-select: none; 
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #000;
+                color: #fff;
+            }
+            header {
+                background-color: #333;
+            }
+            section {
+                background-color: #111;
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+            header {
+                background-color: #f0f0f0;
+            }
+            section {
+                background-color: #f0f0f0;
+            }
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            display: inline-block;
+        }
+        .button {
+            padding: 20px;
+            margin: 0px 20px 20px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button:active {
+            background: #363636;
+        }
+        button {
+            padding: 20px;
+            color: #fff;
+            background-color: #111;
+            border: none;
+            margin: 0px 20px 20px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        section {
+            padding: 20px;
+            margin: 0px 20px 20px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10%;
+            width: 150px;
+            height: 150px;
+            transition: transform 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .profile-pic:active {
+            transform: scale(1.1);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            background: #000;
+        }
+        a {
+            color: #777b7e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        a:active {
+            color: #000000;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #777b7e;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <h1></h1>
+    </header>
+    <section id="home">
+        <h2>Главная</h2>
+        <img src="" alt="Profile Picture" class="profile-pic">
+        <p></p>
+    </section>
+    <section class='button'>
+        <h2>Магазин</h2>
+    </section>
+    <section onclick="document.location=''" class='button'>
+        <h2>Блог</h2>
+    </section>
+    <p><button href="xxx.jpg" download>Скачать файл</button>
+    <section id="projects">
+        <h2>Мои проекты</h2>
+        <ul>
+            <li><a href="" target="_blank">ТГ Бот с Искусственным Интеллектом</a></li>
+            <li><a href="" target="_blank">ТГ Канал</a></li>
+            <li><a href="" target="_blank">Ютуб Канал</a></li>
+            <li>А дальше -> больше...</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной с помощью:</p>
+        <p>Телеграм - <a href="" style="color: #777b7e;">Написать</a></p>
+        <p>ВКонтакте - <a href="" style="color: #777b7e;">Профиль</a></p>
+        <p>Mail - <a href="" style="color: #777b7e;">Почта</a></p>
+    </section>
+    <section id="about">
+        <h2>Good luck</h2>
+        <p class="footer">&copy; 2024</p>
+    </section>
+    <script>
+        // JavaScript для плавного скроллинга
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // JavaScript для фиксированной навигации при прокрутке
+        //window.addEventListener('scroll', function() {
+        //    const navbar = document.getElementById('navbar');
+          //  const header = document.querySelector('header');
+            //const sticky = header.offsetHeight + 20;
+
+            //if (window.pageYOffset >= sticky) {
+              //  navbar.classList.add('fixed');
+            //} else {
+            //    navbar.classList.remove('fixed');
+            //}
+       // });
+
+        // Скрытие preloader после загрузки страницы
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
